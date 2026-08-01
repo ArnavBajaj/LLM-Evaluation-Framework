@@ -63,8 +63,5 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Create .env file from template
-        run: cp .env.example .env
-
       - name: Validate Docker Compose configuration
         run: docker compose config

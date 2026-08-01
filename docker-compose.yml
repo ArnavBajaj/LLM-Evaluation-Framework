@@ -29,8 +29,15 @@ services:
     build:
       context: .
       dockerfile: backend/Dockerfile
-    env_file:
-      - .env
+    environment:
+      DATABASE_URL: ${DATABASE_URL:-postgresql+psycopg://postgres:postgres@postgres:5432/llm_eval}
+      REDIS_URL: ${REDIS_URL:-redis://redis:6379/0}
+      LANGSMITH_PROJECT: ${LANGSMITH_PROJECT:-llm-eval-framework}
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
+      GOOGLE_API_KEY: ${GOOGLE_API_KEY:-}
+      MISTRAL_API_KEY: ${MISTRAL_API_KEY:-}
+      OLLAMA_BASE_URL: ${OLLAMA_BASE_URL:-http://localhost:11434}
     depends_on:
       postgres:
         condition: service_healthy
@@ -44,8 +51,15 @@ services:
     build:
       context: .
       dockerfile: backend/Dockerfile
-    env_file:
-      - .env
+    environment:
+      DATABASE_URL: ${DATABASE_URL:-postgresql+psycopg://postgres:postgres@postgres:5432/llm_eval}
+      REDIS_URL: ${REDIS_URL:-redis://redis:6379/0}
+      LANGSMITH_PROJECT: ${LANGSMITH_PROJECT:-llm-eval-framework}
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
+      GOOGLE_API_KEY: ${GOOGLE_API_KEY:-}
+      MISTRAL_API_KEY: ${MISTRAL_API_KEY:-}
+      OLLAMA_BASE_URL: ${OLLAMA_BASE_URL:-http://localhost:11434}
     depends_on:
       postgres:
         condition: service_healthy
