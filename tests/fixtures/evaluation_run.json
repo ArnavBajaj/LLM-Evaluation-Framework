@@ -1,0 +1,12 @@
+{
+  "model_name": "gpt-5",
+  "provider_name": "openai",
+  "prompt_version": "v3",
+  "dataset_version": "2026-07",
+  "temperature": 0.2,
+  "seed": 42,
+  "metadata": {
+    "suite": "regression",
+    "owner": "platform"
+  }
+}
