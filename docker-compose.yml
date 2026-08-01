@@ -30,10 +30,7 @@ services:
       context: .
       dockerfile: backend/Dockerfile
     env_file:
-      - path: .env
-        required: false
-      - path: .env.example
-        required: false
+      - .env
     depends_on:
       postgres:
         condition: service_healthy
@@ -48,10 +45,7 @@ services:
       context: .
       dockerfile: backend/Dockerfile
     env_file:
-      - path: .env
-        required: false
-      - path: .env.example
-        required: false
+      - .env
     depends_on:
       postgres:
         condition: service_healthy
